@@ -1,0 +1,61 @@
+Table Credentials {
+    id int [pk, increment, ref: - Users.id] // auto-increment
+    email varchar [not null, unique]
+    user_password varchar [not null]
+}
+
+Table Users {
+    id int [pk, increment] // auto-increment
+    name varchar
+    surname varchar
+    role varchar [ref: > Roles.id]
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table Roles {
+    id int [pk, increment] // auto-increment
+    name varchar [not null]
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table UsersAccounts {
+    id int [pk, increment] // auto-increment
+    user_id int [ref: <> Users.id]
+    account_id int [ref: <> Accounts.id]
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table Accounts {
+    id int [pk, increment] // auto-increment
+    balance int
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table Transactions {
+    id int [pk, increment] // auto-increment
+    account_id int
+    id_transaction varchar [not null]
+    amount int
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table AcountsTransactions {
+    id int [pk, increment] // auto-increment
+    account_id int [ref: <> Accounts.id]
+    transaction_id int [ref: <> Transactions.id]
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table Catalogs {
+    id int [pk, increment] // auto-increment
+    parent_id int [ref: > Catalogs.id]
+    name varchar [not null]
+    created_at timestamp
+    updated_at timestamp
+}
