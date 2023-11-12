@@ -51,13 +51,10 @@ Table AcountsTransactions {
     updated_at timestamp
 }
 
-
-
-// Table Catalogs {
-//     id int [pk, increment] // auto-increment
-//     parent_id int [ref: > Catalogs.id]
-//     name varchar [not null]
-//     created_at timestamp
-//     updated_at timestamp
-// }
-
+Table Catalogs {
+    id int [pk, increment] // auto-increment
+    parent_id int [ref: > Catalogs.id]
+    name varchar [not null]
+    created_at timestamp
+    updated_at timestamp
+}
