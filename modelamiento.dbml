@@ -8,7 +8,7 @@ Table Users {
     id int [pk, increment] // auto-increment
     name varchar
     surname varchar
-    role varchar [ref: > Roles.id]
+    role int [ref: > Roles.id]
     created_at timestamp
     updated_at timestamp
 }
@@ -30,6 +30,7 @@ Table UsersAccounts {
 
 Table Accounts {
     id int [pk, increment] // auto-increment
+    id_type_account int
     balance int
     created_at timestamp
     updated_at timestamp
@@ -37,8 +38,6 @@ Table Accounts {
 
 Table Transactions {
     id int [pk, increment] // auto-increment
-    account_id int
-    id_transaction varchar [not null]
     amount int
     created_at timestamp
     updated_at timestamp
@@ -52,10 +51,13 @@ Table AcountsTransactions {
     updated_at timestamp
 }
 
-Table Catalogs {
-    id int [pk, increment] // auto-increment
-    parent_id int [ref: > Catalogs.id]
-    name varchar [not null]
-    created_at timestamp
-    updated_at timestamp
-}
+
+
+// Table Catalogs {
+//     id int [pk, increment] // auto-increment
+//     parent_id int [ref: > Catalogs.id]
+//     name varchar [not null]
+//     created_at timestamp
+//     updated_at timestamp
+// }
+
