@@ -67,3 +67,28 @@ Digital Webdise se encuentra en Sicuani, en el Distrito de Ate, Lima, Perú.
 - El usuario podrá eliminar un movimiento.
 - El usuario podrá ver el listado de movimientos de una cuenta.
 - El usuario podrá exportar el listado de movimientos de una cuenta en formato PDF.
+
+---
+
+## MODELAMIENTO DE BASE DE DATOS
+
+### HERRAMIENTAS UTILIZADAS
+
+Para la realización del modelamiento de la base de datos se utilizó el conocido formato dbml (Database Markup Language) que permite modelar la base de datos de una manera sencilla y rápida. Para ello se utilizaron las siguientes herramientas:
+
+- Para la visualización gráfica y, hacer el trabajo de forma colaborativa del modelamiento utilizamos [dbdiagram.io](https://dbdiagram.io/).
+- Para codificar el modelo utilizamos [visual studio code](https://code.visualstudio.com/). con el plugin:
+  - [vscode-dbml](https://marketplace.visualstudio.com/items?itemName=matt-meyers.vscode-dbml)
+
+### MODELO LÓGICO
+
+En el siguiente [documento](/model.dbml) se encuentran las tablas y relaciones que se utilizarán en la base de datos de forma lógica.
+
+---
+
+## RUN PROJECT
+
+### REQUERIMIENTOS
+
+- Node.js
+- MongoDB
